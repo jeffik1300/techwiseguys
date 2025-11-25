@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoIP Solutions | Tech Wise Guys</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#0ea5e9',
+                            secondary: '#3b82f6',
+                            light: '#f0f9ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-white text-slate-600 font-sans">
+
+    <!-- Navigation (same as main, but VoIP link points here) -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="bg-brand-primary h-10 w-10 rounded-lg flex items-center justify-center text-white text-xl shadow-lg shadow-sky-200">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight text-slate-800">Tech <span class="text-brand-primary">Wise</span> Guys</span>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html#services" class="text-slate-600 hover:text-brand-primary font-medium transition-colors">Services</a>
+                    <a href="voip.html" class="text-brand-primary font-semibold border-b-2 border-brand-primary pb-1">VoIP Solutions</a>
+                    <a href="index.html#about" class="text-slate-600 hover:text-brand-primary font-medium transition-colors">Why Us</a>
+                    <a href="index.html#contact" class="bg-brand-dark text-white px-6 py-2.5 rounded-full font-medium hover:bg-brand-primary transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Get Support
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html#services" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-brand-light hover:text-brand-primary">Services</a>
+                <a href="voip.html" class="block px-3 py-3 rounded-md text-base font-medium text-brand-primary bg-brand-light">VoIP Solutions</a>
+                <a href="index.html#about" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-brand-light hover:text-brand-primary">Why Us</a>
+                <a href="index.html#contact" class="block mt-4 text-center bg-brand-primary text-white px-3 py-3 rounded-md font-medium">Get Support Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-brand-dark text-white overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-32 -mt-32 w-[600px] h-[600px] bg-brand-primary/20 rounded-full blur-3xl -z-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-up">
+                    <p class="text-brand-primary font-semibold uppercase tracking-wide mb-3">VoIP Solutions</p>
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+                        Business‑Grade VoIP Without The Headache
+                    </h1>
+                    <p class="text-slate-300 text-lg mb-6">
+                        Tech Wise Guys designs, hosts, and supports modern phone systems so your team can take calls from anywhere and never miss an opportunity.
+                    </p>
+                    <ul class="text-slate-300 space-y-2 mb-8 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-green-400"></i> Keep your existing numbers and extensions
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-green-400"></i> Local, friendly support when you need it
+                        </li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="index.html#contact" class="px-8 py-3 bg-brand-primary text-white font-bold rounded-lg shadow-lg hover:bg-sky-400 transition-all text-center">
+                            Request a VoIP Quote
+                        </a>
+                        <a href="#plans" class="px-8 py-3 bg-transparent border border-slate-600 text-slate-100 font-bold rounded-lg hover:border-brand-primary hover:text-brand-primary transition-all text-center">
+                            View VoIP Services
+                        </a>
+                    </div>
+                </div>
+                <div class="fade-in-up delay-200">
+                    <div class="bg-slate-900/70 border border-slate-700 rounded-2xl p-6 shadow-2xl">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-mono text-slate-400">LIVE CALL DASHBOARD</span>
+                            <span class="px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs flex items-center gap-1">
+                                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                Online
+                            </span>
+                        </div>
+                        <div class="space-y-4 text-sm text-slate-200">
+                            <div class="flex items-center justify-between">
+                                <span>Agents Online</span>
+                                <span class="font-semibold">12</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Current Calls</span>
+                                <span class="font-semibold">7</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Average Wait Time</span>
+                                <span class="font-semibold text-emerald-400">&lt; 20 sec</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-700 text-xs text-slate-500">
+                            Fully managed VoIP phone systems by Tech Wise Guys.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VoIP Services Overview -->
+    <section id="plans" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-brand-primary font-bold tracking-wide uppercase text-sm mb-2">VoIP Services</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Everything You Need For Calling</h3>
+                <p class="text-slate-600 text-lg">
+                    From hosting to handsets, Tech Wise Guys can plan, install, and support your complete VoIP phone environment.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- VoIP phone system hosting -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-brand-secondary text-xl mb-4">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">VoIP Phone System Hosting</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        Secure, cloud‑hosted phone systems with automatic updates, backups, and monitoring handled for you.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-1">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Hosted PBX in the cloud</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Keep existing phone numbers</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Scales from 2 to 200+ users</li>
+                    </ul>
+                </div>
+
+                <!-- Call Center -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 text-xl mb-4">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Call Center</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        Professionally routed calls with queues, ring groups, and reporting so your team can handle higher volume.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-1">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Call queues & smart routing</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Agent & supervisor dashboards</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Call recording & analytics</li>
+                    </ul>
+                </div>
+
+                <!-- VoIP Phone installations -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 text-xl mb-4">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">VoIP Phone Installations</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        On‑site setup of desk phones, conference phones, and cordless handsets, all tested and labeled.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-1">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Desk & conference phone setup</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Extension & voicemail programming</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> User training on new phones</li>
+                    </ul>
+                </div>
+
+                <!-- Equipment and setup -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-500 text-xl mb-4">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Equipment & Setup</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        Routers, switches, PoE, and cabling configured to give your VoIP traffic priority and rock‑solid reliability.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-1">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Network & QoS configuration</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Battery backup & surge protection</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Ongoing monitoring options</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-brand-primary font-bold tracking-wide uppercase text-sm mb-2">Getting Started</h2>
+                    <h3 class="text-3xl font-bold text-slate-900 mb-4">Simple VoIP rollout in 3 steps</h3>
+                    <p class="text-slate-600 mb-6">
+                        Whether you are moving from traditional phone lines or upgrading an old VoIP system, Tech Wise Guys handles the details so you can keep focusing on your business.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex gap-3">
+                        <div class="h-8 w-8 rounded-full bg-brand-primary text-white flex items-center justify-center text-sm font-bold">1</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">Discovery & Quote</h4>
+                            <p class="text-sm text-slate-500">Review current phone lines, users, and call flow, then provide a clear, itemized proposal.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="h-8 w-8 rounded-full bg-brand-primary text-white flex items-center justify-center text-sm font-bold">2</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">Installation & Porting</h4>
+                            <p class="text-sm text-slate-500">Install equipment, configure your system, and port numbers with minimal downtime.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="h-8 w-8 rounded-full bg-brand-primary text-white flex items-center justify-center text-sm font-bold">3</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">Training & Ongoing Support</h4>
+                            <p class="text-sm text-slate-500">Train your team on key features and provide local support when you need a hand.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 bg-blue-50 border border-blue-100 rounded-2xl px-6 py-4">
+                <p class="text-slate-700 font-medium">
+                    Ready to talk about VoIP for your home office or business?
+                </p>
+                <a href="index.html#contact" class="px-6 py-2.5 bg-brand-dark text-white rounded-lg font-semibold hover:bg-brand-primary transition-colors">
+                    Schedule a VoIP Consult
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as main) -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-2 mb-4 text-white">
+                        <i class="fa-solid fa-microchip text-brand-primary text-xl"></i>
+                        <span class="font-bold text-xl">Tech Wise Guys</span>
+                    </div>
+                    <p class="text-sm text-slate-400 max-w-xs leading-relaxed">
+                        Professional computer support and modern communication solutions for homes and businesses. We make technology work for you.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-4">Services</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#services" class="hover:text-brand-primary transition-colors">PC & Mac Repair</a></li>
+                        <li><a href="voip.html" class="hover:text-brand-primary transition-colors">Business VoIP</a></li>
+                        <li><a href="index.html#services" class="hover:text-brand-primary transition-colors">Network Setup</a></li>
+                        <li><a href="index.html#services" class="hover:text-brand-primary transition-colors">Data Recovery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-4">Company</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#about" class="hover:text-brand-primary transition-colors">About Us</a></li>
+                        <li><a href="index.html#contact" class="hover:text-brand-primary transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+                <p>&copy; 2023 Tech Wise Guys. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <span>Designed for Business</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
